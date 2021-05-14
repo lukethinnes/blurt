@@ -57,7 +57,7 @@ const RestaurantsList = props => {
 
   const find = (query, by) => {
     RestaurantDataService.find(query, by)
-      .then(resopnse => {
+      .then(response => {
         console.log(response.data)
         setRestaurants(response.data.restaurants)
       })
@@ -74,7 +74,7 @@ const RestaurantsList = props => {
     find(searchZip, 'zipcode')
   }
 
-  findByCuisine = () => {
+  const findByCuisine = () => {
     if (searchCuisine == 'All Cuisines') {
       refreshList()
     } else {
@@ -97,8 +97,8 @@ const RestaurantsList = props => {
           <div className="input-group-append">
             <button
               className="btn btn-outline-secondary"
-              type="button"
               onClick={findByName}
+              type="button"
             >
               Search
             </button>
@@ -106,11 +106,12 @@ const RestaurantsList = props => {
         </div>
         <div className="input-group col-lg-4">
           <input
-            type="text"
             className="form-control"
-            placeholder="Search by zip"
-            value={searchZip}
             onChange={onChangeSearchZip}
+            style={{ marginTop: 10 }}
+            placeholder="Search by zip"
+            type="text"
+            value={searchZip}
           />
           <div className="input-group-append">
             <button
@@ -122,7 +123,7 @@ const RestaurantsList = props => {
             </button>
           </div>
         </div>
-        <div className="input-group col-lg-4">
+        <div className="input-group col-lg-4" style={{ marginTop: 10 }}>
 
           <select onChange={onChangeSearchCuisine}>
             {cuisines.map(cuisine => {
@@ -131,7 +132,7 @@ const RestaurantsList = props => {
               )
             })}
           </select>
-          <div className="input-group-append">
+          <div className="input-group-append" >
             <button
               className="btn btn-outline-secondary"
               type="button"
@@ -143,7 +144,7 @@ const RestaurantsList = props => {
 
         </div>
       </div>
-      <div className="row">
+      <div className="row" style={{ marginTop: 10 }}>
         {restaurants.map((restaurant) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
           return (
