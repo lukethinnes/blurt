@@ -49,7 +49,11 @@ return (
                 />
             </div>
 
-            <button onClick={login} className='btn btn-success'/>
+            <button 
+                className='btn btn-success' 
+                onClick={login} 
+                style={{ marginTop: 10 }}
+            >Login</button>
         </div>
     </div>
 );
