@@ -6,6 +6,7 @@ import AddReview from './components/add-review';
 import Restaurant from './components/restaurants';
 import RestaurantsList from './components/restaurants-list';
 import Login from './components/login';
+import logo from './components/blurt.png'
 
 function App() {
 
@@ -44,7 +45,12 @@ function App() {
           </li>
         </div>
       </nav>
-
+      <img src={logo} alt='logo' style={{ 
+          display: 'block', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          margin: 'auto',
+          maxWidth: 700 }}/>
       <div className='container mt-3'>
         <Switch>
               <Route exact path={['/', '/restaurants']} component={RestaurantsList} />            
